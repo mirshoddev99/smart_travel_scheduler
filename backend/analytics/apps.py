@@ -7,4 +7,4 @@ class AnalyticsConfig(AppConfig):
 
     def ready(self):
         # pylint: disable=import-outside-toplevel, unused-import
-        import analytics.signals  # noqa: F401
+        import analytics.signals  

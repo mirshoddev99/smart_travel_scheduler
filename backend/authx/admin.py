@@ -10,14 +10,12 @@ class CustomUserAdmin(UserAdmin):
         "id",
         "username",
         "email",
-        "first_name",
-        "last_name",
         "is_active",
         "is_staff",
         "is_admin",
     )
     list_filter = ("is_active", "is_staff", "is_admin")
-    search_fields = ("username", "email", "first_name", "last_name")
+    search_fields = ("username", "email")
 
 
 class ProfileAdmin(admin.ModelAdmin):

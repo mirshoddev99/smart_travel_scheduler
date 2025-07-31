@@ -14,7 +14,6 @@ from .serializers import TripSerializer, ParticipantSerializer
 User = get_user_model()
 
 
-# pylint: disable=R0902, R0904
 class TripParticipantTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()

@@ -186,7 +186,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "admin@travel-planner.com"
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Travel Planner",
+    "TITLE": "Travel Scheduler",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "SWAGGER_UI_DIST": "SIDECAR",
@@ -224,11 +224,6 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = "authx.CustomUser"
 
-# CORS_ALLOWED_ORIGINS = [
-#     f"http://{HOST}:3000",
-# ]
-
-# CSRF_TRUSTED_ORIGINS = [f"http://{HOST}:3000"]
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_COOKIE_NAME = "csrftoken"
 CSRF_USE_SESSIONS = False
@@ -261,9 +256,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_EXPOSE_HEADERS = ["Content-Type", "X-CSRFToken"]
 
-# CORS_ORIGIN_WHITELIST = [
-#     "http://{HOST}:3000",
-# ]
 
 DJANGO_REST_PASSWORDRESET_TOKEN_CONFIG = {
     "CLASS": "django_rest_passwordreset.tokens.RandomStringTokenGenerator",

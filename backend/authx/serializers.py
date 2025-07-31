@@ -90,7 +90,6 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
         return user
 
 
-# pylint: disable=W0223
 class PasswordResetConfirmSerializer(serializers.Serializer):
     new_password = serializers.CharField()
     confirm_new_password = serializers.CharField()

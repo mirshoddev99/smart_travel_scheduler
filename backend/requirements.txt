@@ -65,3 +65,5 @@ tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.5.0
 zope.interface==7.2
+psycopg2-binary
+python-decouple

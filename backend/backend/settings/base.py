@@ -108,8 +108,12 @@ PORT = os.getenv("PORT")
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': NAME,                               # Replace with your PostgreSQL database name
+        'USER': USER_POSTGRES,                      # Replace with your PostgreSQL username
+        'PASSWORD': PASSWORD_POSTGRES,              # Replace with your PostgreSQL password
+        'HOST': HOST,                               # Replace with "localhost"
+        'PORT': PORT,                               # Default PostgreSQL port "5432"
     }
 }
 

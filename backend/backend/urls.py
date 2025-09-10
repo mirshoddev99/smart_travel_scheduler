@@ -40,9 +40,4 @@ urlpatterns = [
     path("authx/", include("authx.urls", namespace="authx")),
     path("trip/", include("trip.urls", namespace="trip")),
     path("locations/", include("locations.urls", namespace="locations")),
-    path("services/", include("services.urls", namespace="services")),
-    path("journal/", include("journal.urls", namespace="journal")),
-    path("expense/", include("expense.urls", namespace="expense")),
-    path("analytics/", include("analytics.urls", namespace="analytics")),
-    path("contacts/", include("contacts.urls", namespace="contacts")),
 ]

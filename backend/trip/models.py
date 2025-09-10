@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 
 from authx.models import CustomUser
 from locations.models import POI
-from services.models import Accommodation, Transportation
 
 
 class Trip(models.Model):
@@ -24,13 +23,6 @@ class Trip(models.Model):
     pois = models.ManyToManyField(
         POI, related_name="trips", verbose_name="Points of Interest"
     )
-    accommodations = models.ManyToManyField(
-        Accommodation, related_name="trips", verbose_name="Accommodations"
-    )
-    transportations = models.ManyToManyField(
-        Transportation, related_name="trips", verbose_name="Transportations"
-    )
-
     class Meta:
         unique_together = [["name", "organizer"]]
 

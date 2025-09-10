@@ -38,14 +38,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Apps
     "demo_app",
-    "analytics",
     "authx",
-    "contacts",
-    "expense",
-    "journal",
     "locations",
-    # "notifications",
-    "services",
     "trip",
     # Libraries
     "rest_framework",

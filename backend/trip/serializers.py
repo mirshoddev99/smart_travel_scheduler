@@ -1,7 +1,5 @@
 from rest_framework import serializers
 
-from services.serializers import AccommodationSerializer, TransportationSerializer
-from services.models import Accommodation, Transportation
 from locations.models import POI
 from locations.serializers import POIViewSerializer
 from authx.serializers import CustomUserSerializer
@@ -60,10 +58,6 @@ class TripSerializer(serializers.ModelSerializer):
     participants = ParticipantViewSerializer(many=True, read_only=True)
     trip_length = serializers.SerializerMethodField(read_only=True)
     pois = POIViewSerializer(many=True, read_only=True)
-    accommodations = AccommodationSerializer(many=True, required=False, read_only=True)
-    transportations = TransportationSerializer(
-        many=True, required=False, read_only=True
-    )
 
     class Meta:
         model = Trip
@@ -158,14 +152,6 @@ class TripCreateSerializer(serializers.ModelSerializer):
             poi = POI.objects.get(id=poi_id)
             trip.pois.add(poi)
 
-        for accommodation_id in accommodations_ids:
-            accommodation = Accommodation.objects.get(id=accommodation_id)
-            trip.accommodations.add(accommodation)
-
-        for transportation_id in transportations_ids:
-            transportation = Transportation.objects.get(id=transportation_id)
-            trip.transportations.add(transportation)
-
         return trip
 
     def update(self, instance, validated_data):
@@ -190,18 +176,6 @@ class TripCreateSerializer(serializers.ModelSerializer):
             for poi_id in pois_data:
                 poi = POI.objects.get(id=poi_id)
                 instance.pois.add(poi)
-
-        if accommodations_data is not None:
-            instance.accommodations.clear()
-            for accommodation_id in accommodations_data:
-                accommodation = Accommodation.objects.get(id=accommodation_id)
-                instance.accommodations.add(accommodation)
-
-        if transportations_data is not None:
-            instance.transportations.clear()
-            for transportation_id in transportations_data:
-                transportation = Transportation.objects.get(id=transportation_id)
-                instance.transportations.add(transportation)
 
         instance.save()
         return instance

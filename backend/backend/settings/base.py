@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "demo_app",
     "authx",
     "locations",
+    "journal",
     "trip",
     # Libraries
     "rest_framework",

@@ -8,6 +8,3 @@ __pycache__
 
 .gitignore
 .git
-
-# Frontend
-node_modules
